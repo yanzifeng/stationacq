@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StationAcq</class>
+ <widget class="QMainWindow" name="StationAcq">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1030</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>水纹采集仪</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="pixmaps/pixmaps.qrc">
+    <normaloff>:/icons/mainIco.png</normaloff>:/icons/mainIco.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QHeaderView::section {
+    background-color:  rgb(58, 93, 113);
+    color:white;
+    padding: 4px;
+    border: 1px solid lightgray;
+    font: 10pt &quot;微软雅黑&quot;;
+}
+
+QPushButton {
+	font: 10pt &quot;微软雅黑&quot;;
+}
+QLabel {
+	font: 10pt &quot;微软雅黑&quot;;
+}
+QMenuBar {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 rgb(71,83,99), stop:1 rgb(53,64,82));
+	padding:5px;
+    spacing:15px;
+	font:12px;
+    color:white;
+}
+
+QMenuBar::item {
+    spacing: 3px; /* spacing between menu bar items */
+    padding: 1px 4px;
+    background: transparent;
+    border-radius: 4px;
+}
+
+QMenuBar::item:selected { /* when selected using mouse or keyboard */
+    background: #a8a8a8;
+}
+
+QMenuBar::item:pressed {
+    background: #888888;
+}
+
+QToolBar {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                       stop:0 rgb(71,83,99), stop:1 rgb(53,64,82));
+    spacing:15px;
+    padding:5px;
+
+    border-bottom: 2px solid  rgb(53,64,82); 
+    border-top: 1px solid  rgb(53,64,821);
+}
+
+QToolButton {
+    font: 12px &quot;微软雅黑&quot;;
+    color: white;
+}</string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonTextBesideIcon</enum>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_4">
+    <property name="leftMargin">
+     <number>3</number>
+    </property>
+    <property name="topMargin">
+     <number>3</number>
+    </property>
+    <property name="rightMargin">
+     <number>3</number>
+    </property>
+    <property name="bottomMargin">
+     <number>3</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="styleSheet">
+       <string notr="true">QHeaderView::section {
+    background: lightgray;
+    /* ... */
+}</string>
+      </property>
+      <property name="rowCount">
+       <number>0</number>
+      </property>
+      <property name="columnCount">
+       <number>13</number>
+      </property>
+      <attribute name="horizontalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QFrame" name="frame">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>320</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <property name="leftMargin">
+        <number>1</number>
+       </property>
+       <property name="topMargin">
+        <number>1</number>
+       </property>
+       <property name="rightMargin">
+        <number>1</number>
+       </property>
+       <property name="bottomMargin">
+        <number>1</number>
+       </property>
+       <property name="spacing">
+        <number>3</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QFrame" name="frame_2">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Panel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <property name="leftMargin">
+           <number>1</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>1</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QComboBox" name="comboBox">
+            <property name="minimumSize">
+             <size>
+              <width>70</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑 Light</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <item>
+             <property name="text">
+              <string>每日</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>每周</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>每月</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>298</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>测试序列图</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>297</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="4">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QFrame" name="frame_3">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QFrame" name="frame_4">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Panel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1030</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="action_config"/>
+    <addaction name="action_station"/>
+    <addaction name="action_logdlg"/>
+    <addaction name="separator"/>
+    <addaction name="action_exit"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>功能</string>
+    </property>
+    <addaction name="action_acq"/>
+    <addaction name="action_pumpcontrol"/>
+    <addaction name="action_comm"/>
+    <addaction name="separator"/>
+    <addaction name="action_upload"/>
+    <addaction name="separator"/>
+    <addaction name="action_connectServer"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>运行</string>
+    </property>
+    <addaction name="action_start"/>
+    <addaction name="action_stop"/>
+    <addaction name="separator"/>
+    <addaction name="action_calib"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="action_help"/>
+    <addaction name="separator"/>
+    <addaction name="action_about"/>
+    <addaction name="action_TestCase"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_config"/>
+   <addaction name="separator"/>
+   <addaction name="action_start"/>
+   <addaction name="action_stop"/>
+   <addaction name="separator"/>
+   <addaction name="action_calib"/>
+   <addaction name="action_upload"/>
+   <addaction name="separator"/>
+   <addaction name="action_acq"/>
+   <addaction name="action_pumpcontrol"/>
+   <addaction name="action_comm"/>
+   <addaction name="separator"/>
+   <addaction name="action_logdlg"/>
+   <addaction name="separator"/>
+   <addaction name="action_help"/>
+   <addaction name="separator"/>
+  </widget>
+  <action name="action_acq">
+   <property name="icon">
+    <iconset resource="pixmaps/pixmaps.qrc">
+     <normaloff>:/icons/device.png</normaloff>:/icons/device.png</iconset>
+   </property>
+   <property name="text">
+    <string>水纹采集</string>
+   </property>
+  </action>
+  <action name="action_config">
+   <property name="icon">
+    <iconset resource="pixmaps/pixmaps.qrc">
+     <normaloff>:/icons/config.png</normaloff>:/icons/config.png</iconset>
+   </property>
+   <property name="text">
+    <string>参数设置</string>
+   </property>
+  </action>
+  <action name="action_exit">
+   <property name="icon">
+    <iconset resource="pixmaps/pixmaps.qrc">
+     <normaloff>:/icons/exit.png</normaloff>:/icons/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+  <action name="action_pumpcontrol">
+   <property name="icon">
+    <iconset resource="pixmaps/pixmaps.qrc">
+     <normaloff>:/icons/tube.png</normaloff>:/icons/tube.png</iconset>
+   </property>
+   <property name="text">
+    <string>进样控制</string>
+   </property>
+  </action>
+  <action name="action_comm">
+   <property name="icon">
+    <iconset resource="pixmaps/pixmaps.qrc">
+     <normaloff>:/icons/comm.png</normaloff>:/icons/comm.png</iconset>
+   </property>
+   <property name="text">
+    <string>外部通讯</string>
+   </property>
+  </action>
+  <action name="action_logdlg">
+   <property name="icon">
+    <iconset resource="pixmaps/pixmaps.qrc">
+     <normaloff>:/icons/log.png</normaloff>:/icons/log.png</iconset>
+   </property>
+   <property name="text">
+    <string>运行日志</string>
+   </property>
+  </action>
+  <action name="action_start">
+   <property name="icon">
+    <iconset resource="pixmaps/pixmaps.qrc">
+     <normaloff>:/icons/play.png</normaloff>:/icons/play.png</iconset>
+   </property>
+   <property name="text">
+    <string>启动采集</string>
+   </property>
+  </action>
+  <action name="action_stop">
+   <property name="icon">
+    <iconset resource="pixmaps/pixmaps.qrc">
+     <normaloff>:/icons/stop.png</normaloff>:/icons/stop.png</iconset>
+   </property>
+   <property name="text">
+    <string>停止采集</string>
+   </property>
+  </action>
+  <action name="action_help">
+   <property name="icon">
+    <iconset resource="pixmaps/pixmaps.qrc">
+     <normaloff>:/icons/help.png</normaloff>:/icons/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>帮助文档</string>
+   </property>
+  </action>
+  <action name="action_about">
+   <property name="text">
+    <string>关于</string>
+   </property>
+  </action>
+  <action name="action_11">
+   <property name="text">
+    <string>设置数据路径</string>
+   </property>
+  </action>
+  <action name="action_station">
+   <property name="icon">
+    <iconset resource="pixmaps/pixmaps.qrc">
+     <normaloff>:/icons/info.png</normaloff>:/icons/info.png</iconset>
+   </property>
+   <property name="text">
+    <string>站点信息</string>
+   </property>
+  </action>
+  <action name="action_upload">
+   <property name="icon">
+    <iconset resource="pixmaps/pixmaps.qrc">
+     <normaloff>:/icons/upload.png</normaloff>:/icons/upload.png</iconset>
+   </property>
+   <property name="text">
+    <string>数据上传</string>
+   </property>
+  </action>
+  <action name="action_14">
+   <property name="icon">
+    <iconset resource="pixmaps/pixmaps.qrc">
+     <normaloff>:/icons/calib.png</normaloff>:/icons/calib.png</iconset>
+   </property>
+   <property name="text">
+    <string>标样校准</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="icon">
+    <iconset resource="pixmaps/pixmaps.qrc">
+     <normaloff>:/icons/calib.png</normaloff>:/icons/calib.png</iconset>
+   </property>
+   <property name="text">
+    <string>标样校准</string>
+   </property>
+  </action>
+  <action name="action_calib">
+   <property name="icon">
+    <iconset resource="pixmaps/pixmaps.qrc">
+     <normaloff>:/icons/calib.png</normaloff>:/icons/calib.png</iconset>
+   </property>
+   <property name="text">
+    <string>标样校准</string>
+   </property>
+  </action>
+  <action name="action_TestCase">
+   <property name="text">
+    <string>TestCase</string>
+   </property>
+  </action>
+  <action name="action_connectServer">
+   <property name="icon">
+    <iconset resource="pixmaps/pixmaps.qrc">
+     <normaloff>:/icons/connect-icon.png</normaloff>:/icons/connect-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>连接服务器</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="pixmaps/pixmaps.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,44 @@
+#ifndef STATIONACQ_H
+#define STATIONACQ_H
+
+#include <QMainWindow>
+#include "chartview.h"
+#include <QtCharts>
+#include <QChartView>
+#include <QLineSeries>
+#include <QGraphicsLineItem>
+#include <QDateTimeAxis>
+#include <QScatterSeries>
+#include <QProgressBar>
+#include <QLabel>
+#include "led.h"
+
+namespace Ui {
+class StationAcq;
+}
+
+class StationAcq : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    explicit StationAcq(QWidget *parent = 0);
+    ~StationAcq();
+private:
+    void setTableHeader();
+    void setWavefrom();
+    void createStatusBar();
+private:
+    Ui::StationAcq *ui;
+    ChartView *chartview;
+    QChart *chart;
+    QValueAxis *axisY;
+    QDateTimeAxis *axisX;
+    QGraphicsTextItem *textitem;
+    QLineSeries *seriesTest;
+    QProgressBar *progressBar;
+    QLabel *progressBarLabel;
+    Led *led;
+};
+
+#endif // STATIONACQ_H
